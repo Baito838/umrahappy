@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.poppins-thin {
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.poppins-black {
+    font-family: "Poppins", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-family: "Poppins", serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.navbar {
+    background-color: transparent;
+    /* Navbar transparan pada awalnya */
+    transition: background-color 0.3s ease;
+    /* Transisi perubahan warna */
+}
+
+.navbar.scrolled {
+    background-color: white !important;
+    /* Navbar jadi putih setelah di-scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    max-height: 40px;
+    width: clamp(100px, 35vw, 200px);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#hero {
+    padding-top: 80px;
+}
+
+.hero-img {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#2c3b9bcf, transparent),
+        url("/assets/Home/hero.jpg");
+    height: clamp(400px, 35vw, 600px);
+    width: 100%;
+    border-radius: 15px;
+}
+
+.hero-title {
+    font-size: clamp(3.5vw, 35vw, 3.4vw);
+    font-weight: 1200;
+}
+
+.card-form {
+    margin: -40px 0;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px 20px rgba(0, 0, 0, 0.411);
+}
+
+.card-paket {
+    background-color: #e1e1e1;
+    border-radius: 15px;
+    border: none;
+}
+
+.line-form-hero {
+    width: 38px;
+    height: 2.5px;
+    margin: -10px 0 15px 0;
+    background-color: black;
+}
+
+.card-package {
+    overflow: hidden;
+    border: none;
+    border-radius: 15px;
+}
+
+.package-img {
+    width: 100%;
+    height: auto;
+}
+
+#run-logo {
+    background-color: #7d7d7d;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.image-run-1 {
+    display: flex;
+    overflow: hidden;
+    /* Menyembunyikan gambar yang melampaui area container */
+    width: 100%;
+    /* Agar seluruh gambar terlihat */
+    position: relative;
+}
+
+.image-run-1 img {
+    /* Ukuran gambar */
+    height: clamp(50px, 35vw, 100px);
+    width: auto;
+    margin-right: 50px;
+    /* Jarak antar gambar */
+    animation: moveRight 20s linear infinite;
+    /* Animasi bergerak */
+}
+
+#service {
+    margin-top: 50px;
+    height: min-content;
+}
+
+.layanan-subtitle {
+    font-size: 20px;
+}
+
+.icon-service {
+    background-color: #3bd77d;
+    border-radius: 100%;
+    padding: 5px;
+    color: white;
+    font-size: 40px;
+}
+
+.service-img-1 {
+    width: clamp(300px, 35vw, 400px);
+    height: clamp(300px, 35vw, 500px);
+    background-color: #7d7d7d;
+    border: none;
+    border-radius: 15px;
+}
+
+.service-img-2 {
+    width: clamp(300px, 35vw, 400px);
+    height: clamp(300px, 35vw, 400px);
+    background-color: #bebebe;
+    border: none;
+    border-radius: 15px;
+}
+
+#galeri {
+    margin-top: 100px;
+}
+
+.card-galeri {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    background-color: #bebebe;
+    border: none;
+}
+
+#testi {
+    margin: 50px 0;
+}
+
+.testi-img {
+    width: 100%;
+    height: 400px;
+    background-color: #E1E1E1;
+    border-radius: 15px;
+}
+
+.testi-img .title {
+    font-size: 1.25rem;
+}
+
+.carousel-indicators button {
+    width: 10px; /* Ukuran indikator */
+    height: 10px;
+    border-radius: 10px; /* Bikin bulat */
+    background-color: white; /* Warna indikator */
+    border: 1px solid white; /* Supaya lebih jelas */
+    opacity: 0.5; /* Transparan saat tidak aktif */
+    transition: opacity 0.3s ease;
+}
+
+.carousel-indicators .active {
+    opacity: 1; /* Full warna saat aktif */
+    background-color: white; /* Warna lebih terang saat aktif */
+}
+
+#data {
+    background-color: #7d7d7d;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    align-item: center;
+    padding: 20px 0;
+}
+
+.card-konsul{
+     width: 100%;
+     height:  300px;
+     background-color: #bebebe;
+     display: flex;
+     align-item: center;
+}
+
+.card-konsul h1 {
+    font-size: 3.25rem;
+}
+
+#footer {
+    background-color: #7d7d7d;
+    min-height: 400px;
+    width: 100%;
+}
+
+/* Animasi untuk gambar bergerak ke kanan */
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+        /* Mulai dari posisi awal */
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+        /* Bergerak ke kanan */
+    }
+}
+
+@media (max-width: 992px) {
+    .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .auth-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        border: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-run-1 img {
+        height: clamp(30px, 25vw, 70px);
+        /* Menyesuaikan gambar di perangkat lebih kecil */
+    }
+}

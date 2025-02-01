@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Umrahappy</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- {{-- boxicon --}} -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <!-- {{-- odometer --}} -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- {{-- my style --}} -->
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="height: 80px;">
+        <div class="container">
+            <!-- Brand Logo (ditampilkan saat mode mobile) -->
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="/assets/Logo/umrahappy3.png" alt="Brand">
+            </a>
+            <!-- Tombol Hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-md-center text-start">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="paketDropdown" role="button"
+                            data-bs-toggle="dropdown">Paket</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">LA Hemat</a></li>
+                            <li><a class="dropdown-item" href="#">Reguler</a></li>
+                            <li><a class="dropdown-item" href="#">Plus</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testi">Testimoni</a></li>
+                </ul>
+
+                <!-- Tombol Daftar & Login -->
+                <div class="auth-buttons d-flex">
+                    <a href="#" class="btn btn-outline-primary"><i class="bx bx-user"></i> Daftar</a>
+                    <a href="#" class="btn btn-primary"><i class="bx bx-log-in"></i> Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-img">
+                <div class="container text-center text-light pt-5">
+                    <h1 class="hero-title" data-aos="zoom-in-up" data-aos-duration="1200">SELAMAT DATANG DI UMRAHAPPY
+                    </h1>
+
+                    <p class="w-100 w-md-60 w-lg-40" data-aos="zoom-in-up" data-aos-duration="1200">
+                        Kami menawarkan layanan umrah dan haji yang aman dan <br> menyenangkan. Bergabunglah dengan kami
+                        untuk pengalaman <br class=" d-none d-lg-block "> spiritual yang tak terlupakan.
+                    </p>
+                </div>
+            </div>
+            <div class="card card-form mx-4 p-4">
+                <form action="#" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <p class="fw-bold">Keberangkatan</p>
+                            <div class="line-form-hero"></div>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">Jakarta</option>
+                                <option value="2">Makasar</option>
+                                <option value="3">Aceh</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <p class="fw-bold">Tujuan</p>
+                            <div class="line-form-hero"></div>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">Jeddah</option>
+                                <option value="2">Madinah</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-12">
+                            <p class="fw-bold">Waktu</p>
+                            <div class="line-form-hero"></div>
+                            <div>
+                                <input type="date" class="form-control" id="tanggal"
+                                    value="2025-02-01" min="2025-02-01">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <p class="fw-bold">Quota Jamaah</p>
+                            <div class="line-form-hero"></div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">35</option>
+                                        <option value="2">45</option>
+                                        <option value="3">55</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary">
+                                        Cari Paket <i class="bx bx-search-alt-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card card-paket">
+                <div class="container py-5">
+                    <div class="text-center" style="margin-top: 50px;">
+                        <h3 class="poppins-regular" data-aos="zoom-in-up" data-aos-duration="1200">List Paket</h3>
+                        <h1 data-aos="zoom-in-up" data-aos-duration="1200">Pilih Paket Sesuai</h1>
+                        <h1 data-aos="zoom-in-up" data-aos-duration="1200">Kebutuhan Kamu</h1>
+                    </div>
+
+
+                    <hr>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-3" data-aos="fade-up"
+                            data-aos-duration="1400">
+
+                            <div class="card card-package" style="width: 18rem;">
+                                <a class="package-img" href="/assets/Package/1 (2).jpg" data-lightbox="gallery"
+                                    data-title="Gambar 2">
+                                    <img class="package-img" src="/assets/Package/1 (2).jpg" class="card-img-top"
+                                        alt="...">
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-3" data-aos="fade-up"
+                            data-aos-duration="1800">
+                            <div class="card card-package" style="width: 18rem;">
+                                <a class="package-img" href="/assets/Package/1 (1).jpg" data-lightbox="gallery"
+                                    data-title="Gambar 1">
+                                    <img class="package-img" src="/assets/Package/1 (1).jpg" class="card-img-top"
+                                        alt="...">
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-3" data-aos="fade-up"
+                            data-aos-duration="2200">
+                            <div class="card card-package" style="width: 18rem;">
+                                <a class="package-img" href="/assets/Package/1 (3).jpg" data-lightbox="gallery"
+                                    data-title="Gambar 3">
+                                    <img class="package-img" src="/assets/Package/1 (3).jpg" class="card-img-top"
+                                        alt="...">
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="run-logo">
+        <div class="image-run-1">
+            <img src="/assets/Logo/umrahappy2.png" alt="Image 5" class="img-fluid" style="margin-left: -500px;">
+            <img src="/assets/Logo/umrahappy2.png" alt="Image 6" class="img-fluid">
+            <img src="/assets/Logo/umrahappy2.png" alt="Image 1" class="img-fluid">
+            <img src="/assets/Logo/umrahappy2.png" alt="Image 2" class="img-fluid">
+            <img src="/assets/Logo/umrahappy2.png" alt="Image 3" class="img-fluid">
+            <img src="/assets/Logo/umrahappy2.png" alt="Image 4" class="img-fluid">
+        </div>
+    </section>
+
+    <section id="service" class="mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="layanan-subtitle">Layanan Kami</p>
+                    <h1 data-aos="zoom-in-up" data-aos-duration="1200">
+                        Fitur Unggulan Layanan Umrah
+                        dan Haji yang Memudahkan
+                        Perjalanan Anda
+                    </h1>
+                    <p data-aos="zoom-in-up" data-aos-duration="1200">
+                        Kami menawarkan layaanan umrah dan haji yang aman dan nyaman. <br> Dengan pengalaman yang
+                        memuaskan, kami siap membantu Anda <br> menjalanu ubadah dengan tenang
+                    </p>
+                    <div class="row">
+                        <div class="d-flex gap-4">
+
+                            <div data-aos="zoom-in-up" data-aos-duration="1200"><i
+                                    class='bx bx-check icon-service'></i></div>
+                            <div data-aos="fade-up" data-aos-duration="1300">
+                                <h3>Layanan Terpercaya</h3>
+                                <p>Kami menjamin keamanan dan <br>
+                                    kenyamanan selama perjalanan ibadah <br> Anda.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4">
+
+                            <div data-aos="zoom-in-up" data-aos-duration="1200"><i
+                                    class='bx bx-check icon-service'></i></div>
+                            <div data-aos="fade-up" data-aos-duration="1300">
+                                <h3>Pendampingan Profesional</h3>
+                                <p>Tim kami siap mendampingi Anda<br>
+                                    setiap langkah dalam perjalanan <br> ibadah.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4">
+
+                            <div data-aos="zoom-in-up" data-aos-duration="1200"><i
+                                    class='bx bx-check icon-service'></i></div>
+                            <div data-aos="fade-up" data-aos-duration="1300">
+                                <h3>Layanan Terpercaya</h3>
+                                <p>Kami menjamin keamanan dan <br>
+                                    kenyamanan selama perjalanan ibadah <br> Anda.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 text-lg-end text-center pt-5">
+                    <div class="position-relative d-inline-block">
+                        <div class="card p-3 service-img-1 mb-3" data-aos="zoom-in-up" data-aos-duration="1200">
+
+
+                            <div class="card service-img-2 position-absolute start-0 top-100 translate-middle p-2 d-none d-xl-block"
+                                data-aos="zoom-in-up" data-aos-duration="1200">
+                            </div>
+                        </div>
+                        <div class="card p-3 service-img-2 d-block d-xl-none" data-aos="zoom-in-up"
+                            data-aos-duration="1200">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <div class="container">
+            <div class="text-center">
+                <p class="layanan-subtitle" data-aos="zoom-in-up" data-aos-duration="1200">Kolase Galeri</p>
+                <h1 data-aos="zoom-in-up" data-aos-duration="1200">
+                    Kebahagiaan Umrah <br>
+                    Bersama Umrahappy
+                </h1>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="card card-galeri">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" data-aos="fade-up" data-aos-duration="1300">
+                Lihat Lebih banyak
+            </button>
+        </div>
+
+    </section>
+
+    <section id="testi">
+        <div class="container">
+            <p class="layanan-subtitle" data-aos="zoom-in-up" data-aos-duration="1200">Testimonial</p>
+            <h1 data-aos="zoom-in-up" data-aos-duration="1200">
+                Apa Kata Jama'ah <br>
+                Umrahappy ?
+            </h1>
+
+            <div id="carouselTesti" class="carousel slide mt-5" data-bs-ride="carousel" data-aos="fade-up"
+                data-aos-duration="1200">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselTesti" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselTesti" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselTesti" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testi-img text-center container d-block w-100 pt-md-4 pt-3">
+                            {{-- <img src="..." class="d-block w-100" alt="..."> --}}
+                            <p class="mt-5 title">"Pengalaman umrah bersama umrahappy sangat memuaskan. <br> Semua
+                                prosesnya berjalan lancar dan menyenangkan."</p>
+
+                            <img src="/assets/Testi/Pria.png" alt="Profile"
+                                class="rounded-circle border border-white mt-4" width="80" height="80">
+                            <h5>Ilham Fachri</h5>
+                            <p>Jama'ah Bogor</p>
+
+
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="testi-img text-center container d-block w-100 pt-md-4 pt-3">
+                            {{-- <img src="..." class="d-block w-100" alt="..."> --}}
+                            <p class="mt-5 title">"Pengalaman umrah bersama umrahappy sangat memuaskan. <br> Semua
+                                prosesnya berjalan lancar dan menyenangkan."</p>
+
+                            <img src="/assets/Testi/Pria.png" alt="Profile"
+                                class="rounded-circle border border-white mt-4" width="80" height="80">
+                            <h5>Ilham Fachri</h5>
+                            <p>Jama'ah Bogor</p>
+
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testi-img text-center container d-block w-100 pt-md-4 pt-3">
+                            {{-- <img src="..." class="d-block w-100" alt="..."> --}}
+                            <p class="mt-5 title">"Pengalaman umrah bersama umrahappy sangat memuaskan. <br> Semua
+                                prosesnya berjalan lancar dan menyenangkan."</p>
+
+                            <img src="/assets/Testi/Pria.png" alt="Profile"
+                                class="rounded-circle border border-white mt-4" width="80" height="80">
+                            <h5>Ilham Fachri</h5>
+                            <p>Jama'ah Bogor</p>
+
+
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTesti"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTesti"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="data">
+        <div class="container my-auto">
+            <div class="row text-center">
+                <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="odometer text-light hero-title" data-count="7">0 +</h1>
+                    <p class="text-light" data-aos="fade-up" data-aos-duration="1300">Tahun Pengalaman</p>
+                </div>
+                <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="odometer text-light hero-title" data-count="2">0 +</h1>
+                    <p class="text-light" data-aos="fade-up" data-aos-duration="1300">Agen</p>
+                </div>
+                <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="odometer text-light hero-title" data-count="3">0 +</h1>
+                    <p class="text-light" data-aos="fade-up" data-aos-duration="1300">Cabang</p>
+                </div>
+                <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="odometer text-light hero-title" data-count="50">0 +</h1>
+                    <p class="text-light" data-aos="fade-up" data-aos-duration="1300">Jamaah Perbulan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="container mt-4" data-aos="fade-up" data-aos-duration="1300">
+        <div class="card card-konsul text-center d-flex align-items-center justify-content-center p-4">
+            <h1 class="mb-0">Masih Ada Pertanyaan?</h1>
+            <p>Konsultasikan langsung dengan CS kami atau lihat pertanyaan dan jawaban yang sering ditanyakan.</p>
+
+            <div class="mt-4">
+                <button data-aos="fade-up" data-aos-duration="1400"
+                    class="btn btn-outline-secondary rounded-pill">Lihat Halaman FAQ</button>
+                <button data-aos="fade-up" data-aos-duration="1600" class="btn btn-primary rounded-pill">Konsultasi
+                    Whatsapp</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="footer" class="mt-4">
+        <div class="container py-4">
+            <img class="logo" src="/assets/Logo/umrahappy3.png" alt="Brand">
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        window.addEventListener('scroll', function() {
+            let navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled'); // Menambahkan kelas 'scrolled' saat scroll lebih dari 50px
+            } else {
+                navbar.classList.remove('scrolled'); // Menghapus kelas 'scrolled' saat scroll kurang dari 50px
+            }
+        });
+    </script>
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true, // Bisa next/prev
+            'alwaysShowNavOnTouchDevices': true,
+            'disableScrolling': true
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let odometers = document.querySelectorAll(".odometer");
+
+            let observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            let odometer = entry.target;
+                            let finalCount = parseInt(odometer.getAttribute("data-count"));
+                            let currentCount = 0;
+                            let speed = 100; // Kecepatan animasi
+
+                            let counter = setInterval(() => {
+                                if (currentCount >= finalCount) {
+                                    clearInterval(counter);
+                                    odometer.innerHTML = finalCount +
+                                        " +"; // Tambahkan simbol +
+                                } else {
+                                    odometer.innerHTML = currentCount + " +";
+                                    currentCount++;
+                                }
+                            }, speed);
+
+                            observer.unobserve(odometer); // Hentikan observer setelah angka selesai
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                } // Akan mulai animasi saat elemen 50% terlihat di layar
+            );
+
+            odometers.forEach((odometer) => {
+                observer.observe(odometer);
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+
+</html>

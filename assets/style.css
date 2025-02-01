@@ -130,7 +130,6 @@ h6 {
 }
 
 .navbar {
-    background-color: transparent;
     /* Navbar transparan pada awalnya */
     transition: background-color 0.3s ease;
     /* Transisi perubahan warna */
@@ -360,6 +359,11 @@ h6 {
 
     .dropdown-menu {
         border: none;
+    }
+
+    .navbar {
+        background-color: white !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 }
 
